@@ -1,0 +1,87 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Unibo Motorsport (Driverless Division)",
+            "year": "2025-Present",
+            "role": "Driverless Software Engineer",
+            "description": "Autonomous race car control systems. Computer vision, path planning, velocity and steering control. Full stack in C++ on embedded Linux with strict real-time constraints.",
+            "tags": ["C++", "ROS2", "Deep Learning", "Computer Vision", "Control Systems"],
+            "featured": true
+        },
+        {
+            "id": 2,
+            "title": "Aurora Rocketry",
+            "year": "2025-Present",
+            "role": "GNC Team Member",
+            "description": "Guidance, Navigation & Control for rockets. IMU/GPS sensor fusion, Extended Kalman Filter state estimation, PID controls for control surfaces.",
+            "tags": ["MATLAB", "Simulink", "Aerodynamics", "Aerospace control theory", "Kalman filter"],
+            "featured": true
+        },
+        {
+            "id": 4,
+            "title": "Monolith",
+            "year": "2025",
+            "role": "Personal Project",
+            "description": "Monolith is a drop-in replacement for the standard library's memory allocation functions (malloc, free, and calloc). This project serves as a deep dive into low-level systems programming, demonstrating robust heap management, precise pointer arithmetic, and effective strategies to combat memory fragmentation.",
+            "tags": ["C", "Dynamic memory management", "POSIX", "Linux", "System Engineering"],
+            "featured": true
+        },
+        {
+            "id": 4,
+            "title": "Poetr-AI",
+            "year": "2023",
+            "role": "Personal Project",
+            "description": "PoetrAI is a haiku poetry generation software, the first of its kind. The project was developed entirely in Python and uses the first fine-tuning techniques on OpenAI's GPT-2 model.",
+            "tags": ["Python", "Neural Networks", "Tranformers", "NLP", "Fine-Tuning", "UI design"],
+            "featured": true
+        }
+    ],
+    "articles": [
+        {
+            "id": 1,
+            "title": "Why Low-Level Still Matters",
+            "dateFormatted": "Oct 15, 2024",
+            "excerpt": "In a world of abstractions and high-level frameworks, understanding how the machine actually works is what separates a programmer from a systems engineer.",
+            "url": "#",
+            "published": true,
+            "content": "<p>In a world of abstractions and high-level frameworks, understanding how the machine actually works is what separates a programmer from a systems engineer.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p><h2>The Core Problem</h2><p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa.</p>"
+        },
+        {
+            "id": 2,
+            "title": "Real-Time Systems in Rockets",
+            "dateFormatted": "Sep 22, 2024",
+            "excerpt": "When you have 10ms to decide if your rocket needs to correct trajectory, every clock cycle counts. No garbage collection, no dynamic allocation, no debugger.",
+            "url": "#",
+            "published": true,
+            "content": "<p>When you have 10ms to decide if your rocket needs to correct trajectory, every clock cycle counts. No garbage collection, no dynamic allocation, no debugger.</p><p>Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.</p>"
+        },
+        {
+            "id": 3,
+            "title": "Driverless: Software That Must Work",
+            "dateFormatted": "Aug 10, 2024",
+            "excerpt": "In autonomous motorsport there are no beta versions. The code either works or it doesn't. A race car at 100 km/h won't wait for you to deploy a hotfix.",
+            "url": "#",
+            "published": true,
+            "content": "<p>In autonomous motorsport there are no beta versions. The code either works or it doesn't. A race car at 100 km/h won't wait for you to deploy a hotfix.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>"
+        },
+        {
+            "id": 4,
+            "title": "AI and Embedded Systems: The Future",
+            "dateFormatted": "Jul 05, 2024",
+            "excerpt": "Artificial intelligence doesn't just live in the cloud. The future is bringing AI where it's needed: drones, robots, cars, medical devices.",
+            "url": "#",
+            "published": true,
+            "content": "<p>Artificial intelligence doesn't just live in the cloud. The future is bringing AI where it's needed: drones, robots, cars, medical devices.</p><p>Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.</p>"
+        },
+        {
+            "id": 5,
+            "title": "Article Example 5",
+            "dateFormatted": "Jun 01, 2024",
+            "excerpt": "This is the fifth article, just to demonstrate pagination.",
+            "url": "#",
+            "published": true,
+            "content": "<p>This is the full content for the fifth article.</p>"
+        }
+    ]
+}

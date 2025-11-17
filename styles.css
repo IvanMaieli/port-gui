@@ -1,0 +1,447 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.document {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+/* Header fisso */
+.doc-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(4px);
+    padding: 1.5rem 0;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+}
+
+.header-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.header-nav a:hover {
+    color: #000;
+}
+
+/* Intro */
+.intro {
+    margin-bottom: 4rem;
+}
+
+.name {
+    font-size: clamp(4rem, 15vw, 9rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin-bottom: 1rem;
+}
+
+.meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* About */
+.about {
+    margin-bottom: 6rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 3rem;
+}
+
+.lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.about p {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+mark {
+    background: #000;
+    color: #fff;
+    padding: 0.1rem 0.3rem;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.tech-list span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 0.3rem 0.8rem;
+}
+
+/* Sections */
+section {
+    margin-bottom: 6rem;
+}
+
+h2 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+    color: #999;
+}
+
+/* Projects */
+.project {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.8rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.project-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.project-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.project-desc {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.project-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* Articles */
+.article {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.article:last-child {
+    border-bottom: none;
+}
+
+.article-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    transition: opacity 0.2s;
+}
+
+.article-title:hover {
+    opacity: 0.6;
+}
+
+.article-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 0.8rem;
+}
+
+.article-excerpt {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Contact */
+.contact p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.contact-item .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-item a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.contact-item a:hover {
+    opacity: 0.6;
+}
+
+/* Footer */
+.doc-footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.doc-footer p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .document {
+        padding: 0 1.5rem 3rem;
+    }
+
+    .doc-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .name {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+    .meta {
+        font-size: 0.75rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .project-header {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .tech-list {
+        gap: 0.6rem;
+    }
+
+    .tech-list span {
+        font-size: 0.75rem;
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+    background: #000;
+    color: #fff;
+}
+
+/* Aggiungi questi stili alla fine di styles.css */
+
+/* Pagination */
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.page-number,
+.page-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    color: #666;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-number {
+    min-width: 2.2rem;
+    text-align: center;
+}
+
+.page-number:hover,
+.page-btn:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.page-number.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    cursor: default;
+}
+
+.page-btn {
+    font-weight: 500;
+}
+
+/* Mobile pagination */
+@media (max-width: 768px) {
+    .pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .page-number,
+    .page-btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.7rem;
+    }
+}
+
+/* Aggiungi alla fine di styles.css */
+
+/* Stili per la pagina Articolo Singolo */
+.article-page {
+    padding-top: 4rem; /* Spazio sotto l'header fisso */
+}
+
+.article-page h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: #000;
+    /* Resetta stili h2 generici */
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.article-page .article-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 3rem;
+    display: block;
+}
+
+.article-page .full-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-page .full-text p {
+    margin-bottom: 1.5rem;
+}
+
+.article-page .full-text h2 {
+    /* Stile per gli h2 *dentro* il contenuto dell'articolo */
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
+    color: #000;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-page .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.article-page .back-link:hover {
+    opacity: 0.6;
+}
