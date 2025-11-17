@@ -137,7 +137,6 @@ function loadArticles(page = 1) {
         articleEl.innerHTML = `
             <a href="article.html?id=${article.id}" class="article-title">${article.title}</a>
             <div class="article-date">${article.dateFormatted}</div>
-            <p class="article-excerpt">${article.excerpt}</p>
         `;
         
         container.appendChild(articleEl);
