@@ -8,7 +8,7 @@ const infoData = {
     year: "2025",
     about: {
         lead: "Building systems that cannot afford to crash. Focused on autonomous vehicles, rocket guidance systems, and real-time operating systems.",
-        description: "Currently working on driverless race cars at Unibo Motorsport (Driverless Division) and rocket GNC systems at Aurora Rocketry. Interested in everything that runs on bare metal and controls hardware in real-time."
+        description: "Working on driverless car at Unibo Motorsport (Driverless Division) and rocket GNC systems at Aurora Rocketry. Interested in everything that runs on bare metal and controls hardware in real-time."
     },
     technologies: [
         "C/C++",
