@@ -1,18 +1,18 @@
 +++
-title = "Why Low-Level Matters"
+title = "Why Low-Level Still Matters"
 date = 2024-10-15
 template = "page.html"
 +++
 
-In un mondo di framework web, capire i puntatori sembra arcaico. Ma quando sei a Mach 1, il Garbage Collector non è tuo amico.
+In a world of abstractions and high-level frameworks, understanding how the machine actually works is what separates a programmer from a systems engineer.
 
-Ecco un esempio di gestione critica della memoria in C:
+When you write JavaScript, you don't worry about where your data lives. But when you write firmware for a braking system, every byte counts.
+
+## The Core Problem
+
+Here is an example of what I mean by memory control. If you get this wrong in a browser, you get a sad tab. If you get this wrong in a rocket, you get a crater.
 
 ```c
-void critical_loop() {
-    // Non allocare mai qui dentro
-    while(is_flying) {
-        update_state();
-        control_surfaces();
-    }
-}
+void* unsafe_ptr = (void*)0xDEADBEEF;
+// Direct memory access requires discipline.
+// In embedded systems, you are the garbage collector.

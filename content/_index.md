@@ -1,8 +1,11 @@
 +++
 title = "Home"
 sort_by = "date"
-template = "index.html"
+# No template needed here, it uses index.html by default
 +++
 
-Benvenuti. Questo è il mio archivio personale.
-Mi occupo di sistemi che devono funzionare per forza: razzi, auto autonome e kernel.
+I am a Computer Engineering Student based in Bologna.
+
+I build systems that cannot afford to crash. My focus is on autonomous vehicles, rocket guidance systems, and real-time operating systems.
+
+Currently working on the driverless race car at **Unibo Motorsport** and GNC systems at **Aurora Rocketry**. I am interested in everything that runs on bare metal and controls hardware under strict real-time constraints.
