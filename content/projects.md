@@ -1,30 +1,17 @@
-+++
-title = "Projects"
-slug = "projects"
-template = "page.html"
-date = 2025-01-01
-+++
+---
+title: "Projects"
+layout: "single"
+---
 
 ### 2025
 
-* **Unibo Motorsport (Driverless Division)**
-    *Role: Driverless Software Engineer*
-    Autonomous race car control systems. Computer vision, path planning, velocity and steering control. Full stack in C++ on embedded Linux with strict real-time constraints.
-    *Tech: C++, ROS2, Deep Learning, Control Systems*
+* **Unibo Motorsport (Driverless)**
+  Sviluppo stack di guida autonoma ROS2.
 
-* **Aurora Rocketry**
-    *Role: GNC Team Member*
-    Guidance, Navigation & Control for rockets. IMU/GPS sensor fusion, Extended Kalman Filter state estimation, PID controls for control surfaces.
-    *Tech: MATLAB, Simulink, Aerospace Control Theory*
+* **Monolith Allocator**
+  Un memory allocator POSIX scritto da zero in C.
 
-* **Monolith**
-    *Personal Project*
-    A drop-in replacement for the standard library's memory allocation functions (`malloc`, `free`, `calloc`). A deep dive into low-level systems programming, robust heap management, and pointer arithmetic.
-    *Tech: C, POSIX, Linux Internals*
+### 2024
 
-### 2023
-
-* **Poetr-AI**
-    *Personal Project*
-    Haiku poetry generation software using fine-tuning techniques on OpenAI's GPT-2 model.
-    *Tech: Python, Neural Networks, NLP*
+* **Rocket GNC**
+  Sistemi di guida per Aurora Rocketry.

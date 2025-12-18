@@ -1,81 +1,40 @@
-/* static/style.css */
 body {
     font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace;
     background-color: #fff;
     color: #111;
-    font-size: 15px; 
+    font-size: 15px;
     line-height: 1.6;
     max-width: 720px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Header */
-header {
-    margin-bottom: 50px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 20px;
-}
+header { margin-bottom: 50px; border-bottom: 2px solid #000; padding-bottom: 20px; }
+h1 { font-size: 1.6em; margin: 0 0 10px 0; font-weight: bold; }
+.bio { color: #444; margin-bottom: 15px; }
+.nav-links { font-size: 0.95em; }
 
-h1, h2, h3 {
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-weight: bold;
-    letter-spacing: -0.5px; /* Consolas ha spaziatura larga, stringiamola nei titoli */
-}
-
-h1 {
-    font-size: 1.5em;
-    margin: 0 0 10px 0;
-    font-weight: bold;
-}
-
-.nav-links {
-    font-family: monospace;
-    font-size: 0.9em;
-}
-
-/* Links Antirez Style */
+/* Link stili Antirez */
 a { color: #0000cc; text-decoration: underline; }
 a:visited { color: #551a8b; }
 a:hover { color: #ff0000; text-decoration: none; }
 
-/* Liste Articoli */
-.post-list {
-    list-style: none;
-    padding: 0;
-}
+/* Lista Blog */
+.post-list { list-style: none; padding: 0; }
+.post-item { margin-bottom: 8px; }
+.post-date { color: #666; margin-right: 15px; }
 
-.post-item {
-    margin-bottom: 8px;
-}
+/* Articolo */
+.article-title { margin-bottom: 5px; }
+.article-meta { color: #777; margin-bottom: 30px; font-size: 0.9em; border-bottom: 1px solid #eee; padding-bottom: 10px;}
+.article-content { margin-top: 20px; }
 
-.post-date {
-    font-family: monospace;
-    color: #555;
-    margin-right: 15px;
-    font-size: 0.9em;
-}
-
-/* Contenuto Articolo */
-.article-content { margin-top: 30px; }
-.article-title { font-size: 1.8em; margin-bottom: 5px; color: #000; }
-.article-meta { color: #666; font-family: monospace; margin-bottom: 30px; display: block; }
-
-/* Code Blocks */
+/* Codice */
 pre {
+    background: #f4f4f4;
     padding: 15px;
     border: 1px solid #ddd;
     overflow-x: auto;
     font-size: 0.9em;
 }
-
-pre, code {
-    font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace;
-}
-
-blockquote {
-    border-left: 3px solid #000;
-    margin-left: 0;
-    padding-left: 15px;
-    color: #444;
-}
+blockquote { border-left: 4px solid #000; padding-left: 15px; color: #555; }

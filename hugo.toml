@@ -1,0 +1,10 @@
+baseURL = 'https://ivanmaieli.github.io/'
+languageCode = 'en-us'
+title = 'Ivan Maieli'
+theme = [] # Nessun tema, usiamo layout custom (Antirez style)
+
+[params]
+  bio = "Systems Engineer focused on real-time systems and bare metal."
+  email = "ivan.maieli@gmail.com"
+  github = "github.com/IvanMaieli"
+  linkedin = "linkedin.com/in/ivan-maieli"
