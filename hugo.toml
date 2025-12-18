@@ -1,4 +1,4 @@
-baseURL = 'https://ivanmaieli.github.io/'
+baseURL = 'https://ivanmaieli.it/'
 languageCode = 'en-us'
 title = 'Ivan Maieli'
 theme = [] # Nessun tema, usiamo layout custom (Antirez style)
@@ -8,4 +8,3 @@ theme = [] # Nessun tema, usiamo layout custom (Antirez style)
   email = "ivan.maieli@gmail.com"
   github = "github.com/IvanMaieli"
   linkedin = "linkedin.com/in/ivan-maieli"
-  
