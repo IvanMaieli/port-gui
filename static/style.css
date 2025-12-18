@@ -1,0 +1,72 @@
+/* static/style.css */
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    margin-bottom: 50px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.nav-links {
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Links Antirez Style */
+a { color: #0000cc; text-decoration: underline; }
+a:visited { color: #551a8b; }
+a:hover { color: #ff0000; text-decoration: none; }
+
+/* Liste Articoli */
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    margin-bottom: 8px;
+}
+
+.post-date {
+    font-family: monospace;
+    color: #555;
+    margin-right: 15px;
+    font-size: 0.9em;
+}
+
+/* Contenuto Articolo */
+.article-content { margin-top: 30px; }
+.article-title { font-size: 1.8em; margin-bottom: 5px; color: #000; }
+.article-meta { color: #666; font-family: monospace; margin-bottom: 30px; display: block; }
+
+/* Code Blocks */
+pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+    font-size: 0.9em;
+}
+
+blockquote {
+    border-left: 3px solid #000;
+    margin-left: 0;
+    padding-left: 15px;
+    color: #444;
+}
