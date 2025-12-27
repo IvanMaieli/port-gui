@@ -2,6 +2,10 @@
 title: "Projects"
 layout: "single"
 ---
+**Coke** 
+An high-performance, minimalist network sniffer engineered in C. It bypasses standard library abstractions by using Linux raw sockets (`AF_PACKET`) to provide surgical visibility into every frame crossing your network interface.
+Designed for low-latency environments and embedded systems, Coca delivers raw power with a zero-dependency footprint.
+Check it there: __https://github.com/IvanMaieli/Coke__
 
 
 **Unibo Motorsport - CPU/GPU Security**
