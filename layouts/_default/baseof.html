@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{ " style.css" | relURL }}">
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h1><a href="/">{{ .Site.Title }}</a></h1>
+            <h1><a href="{{ "" | relURL }}">{{ .Site.Title }}</a></h1>
             <div class="bio">{{ .Site.Params.bio }}</div>
             <nav>
-                <a href="/projects">Projects</a>
+                <a href="{{ " projects" | relURL }}">Projects</a>
                 <a href="https://{{ .Site.Params.github }}">GitHub</a>
                 <a href="https://{{ .Site.Params.linkedin }}">LinkedIn</a>
                 <a href="mailto:{{ .Site.Params.email }}">Contact</a>
