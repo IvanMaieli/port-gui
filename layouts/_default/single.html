@@ -1,14 +1,13 @@
 {{ define "main" }}
 <article>
-    <h1 class="article-title">{{ .Title }}</h1>
-    
-    {{ if ne .Title "Projects" }}
-    <div class="article-meta">
-        Date: {{ .Date.Format "2006-01-02" }}
-    </div>
-    {{ end }}
+    <header style="margin-bottom: 40px;">
+        <h2 style="font-size: 40px; line-height: 1.1; margin-bottom: 16px;">{{ .Title }}</h2>
+        {{ if ne .Title "Projects" }}
+        <div class="post-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+        {{ end }}
+    </header>
 
-    <div class="article-content">
+    <div class="content">
         {{ .Content }}
     </div>
 </article>

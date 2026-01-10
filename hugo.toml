@@ -3,6 +3,11 @@ languageCode = 'en-us'
 title = 'Ivan Maieli'
 theme = [] # Nessun tema, usiamo layout custom (Antirez style)
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   bio = "Systems Engineer focused on real-time systems and bare metal."
   email = "ivan.maieli@gmail.com"

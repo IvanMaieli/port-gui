@@ -1,17 +1,41 @@
 {{ define "main" }}
-    <div class="intro-content">
-        {{ .Content }}
-    </div>
+<div class="content">
+    {{ .Content }}
+</div>
 
-    {{ if .IsHome }}
+{{ if .IsHome }}
+<div class="section-header">
+    <h3>Featured Projects</h3>
+</div>
+<div class="home-projects">
+    <a href="/projects" class="home-project-item">
+        <span class="home-project-name">Coke</span>
+        <span class="home-project-tag">Networking / C</span>
+    </a>
+    <a href="/projects" class="home-project-item">
+        <span class="home-project-name">Monolith Allocator</span>
+        <span class="home-project-tag">Systems / Linux</span>
+    </a>
+    <a href="/projects" class="home-project-item">
+        <span class="home-project-name">Unibo Motorsport</span>
+        <span class="home-project-tag">Race Car Safety</span>
+    </a>
+</div>
+
+<div class="section-header">
     <h3>Writing</h3>
-    <ul class="post-list">
-        {{ range (where .Site.RegularPages "Section" "blog") }}
-        <li class="post-item">
-            <span class="post-date">[{{ .Date.Format "2006-01-02" }}]</span>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
-        {{ end }}
-    </ul>
+</div>
+<ul class="post-list">
+    {{ range (where .Site.RegularPages "Section" "blog") }}
+    <li class="post-item">
+        <a href="{{ .RelPermalink }}" class="post-link">
+            <div class="post-item-content">
+                <span class="post-title">{{ .Title }}</span>
+                <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+            </div>
+        </a>
+    </li>
     {{ end }}
+</ul>
+{{ end }}
 {{ end }}
