@@ -2,7 +2,6 @@ baseURL = 'https://ivanmaieli.it/'
 languageCode = 'en-us'
 title = 'Ivan Maieli'
 theme = [] # Nessun tema, usiamo layout custom (Antirez style)
-relativeURLs = true
 
 [markup]
   [markup.goldmark]
