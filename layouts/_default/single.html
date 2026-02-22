@@ -1,13 +1,17 @@
 {{ define "main" }}
-<article>
-    <header style="margin-bottom: 40px;">
-        <h2 style="font-size: 40px; line-height: 1.1; margin-bottom: 16px;">{{ .Title }}</h2>
-        {{ if ne .Title "Projects" }}
-        <div class="post-date">{{ .Date.Format "Jan 2, 2006" }}</div>
-        {{ end }}
+<article class="quantum-article">
+    <header class="q-header">
+        <div class="q-meta-top">
+            <span class="q-label">SYSTEM_LOG</span>
+            {{ if ne .Title "Projects" }}
+            <span class="q-timestamp">MEASURED: {{ .Date.Format "2006.01.02_15:04" }}</span>
+            {{ end }}
+        </div>
+        <h1 class="q-title">{{ .Title }}</h1>
+        <div class="q-header-line"></div>
     </header>
 
-    <div class="content">
+    <div class="q-content">
         {{ .Content }}
     </div>
 </article>

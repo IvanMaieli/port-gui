@@ -4,29 +4,57 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <link rel="stylesheet" href="/style.css?v=2">
+    <meta name="theme-color" content="#02040a">
+    <title>{{ if .IsHome }}{{ .Site.Title }} – Quantum Architecture{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v={{ now.Unix }}">
 </head>
 
 <body>
+    <!-- Quantum Background Effects -->
+    <div class="quantum-field">
+        <div class="probability-cloud cloud-1"></div>
+        <div class="probability-cloud cloud-2"></div>
+    </div>
+    <div class="interference-grid"></div>
+
     <div class="container">
-        <header>
-            <h1><a href="/">{{ .Site.Title }}</a></h1>
-            <div class="bio">{{ .Site.Params.bio }}</div>
-            <nav>
-                <a href="/projects/">Projects</a>
-                <a href="https://{{ .Site.Params.github }}">GitHub</a>
-                <a href="https://{{ .Site.Params.linkedin }}">LinkedIn</a>
-                <a href="mailto:{{ .Site.Params.email }}">Contact</a>
+        <header class="top-bar">
+            <div class="header-content">
+                <div class="brand-group">
+                    <div class="state-vector">|ψ⟩</div>
+                    <h1><a href="/" class="brand">{{ .Site.Title }}</a></h1>
+                </div>
+                <div class="tagline">{{ .Site.Params.bio }}</div>
+            </div>
+
+            <nav class="main-nav">
+                <a href="/projects/" class="nav-link" data-text="Projects"><span>Projects</span></a>
+                <a href="https://{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer" class="nav-link"
+                    data-text="GitHub"><span>GitHub</span></a>
+                <a href="https://{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer" class="nav-link"
+                    data-text="LinkedIn"><span>LinkedIn</span></a>
+                <a href="mailto:{{ .Site.Params.email }}" class="nav-link" data-text="Contact"><span>Contact</span></a>
             </nav>
         </header>
 
-        <main>
+        <main class="content-wrapper">
             {{ block "main" . }}{{ end }}
         </main>
 
         <footer>
-            &copy; {{ now.Year }} {{ .Site.Title }}
+            <div class="footer-inner">
+                <div class="coherence-status">
+                    <div class="spin-indicator"></div>
+                    <span>Coherence Maintained</span>
+                </div>
+                <p class="copyright">&copy; {{ now.Year }} {{ .Site.Title }}. Ground state.</p>
+            </div>
         </footer>
     </div>
 </body>

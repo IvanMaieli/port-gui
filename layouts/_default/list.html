@@ -1,41 +1,101 @@
 {{ define "main" }}
-<div class="content">
-    {{ .Content }}
+<div class="hero-section">
+    <div class="typewriter-effect">
+        {{ .Content }}
+    </div>
 </div>
 
 {{ if .IsHome }}
-<div class="section-header">
-    <h3>Featured Projects</h3>
+<div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-text">System Manifest</div>
+    <div class="divider-line"></div>
 </div>
-<div class="home-projects">
-    <a href="/projects/" class="home-project-item">
-        <span class="home-project-name">Coke</span>
-        <span class="home-project-tag">Networking / C</span>
+
+<div class="qubit-grid">
+    <a href="/projects/" class="qubit-card">
+        <div class="qubit-state-indicator"></div>
+        <div class="qubit-content">
+            <h4 class="qubit-title">Coke</h4>
+            <p class="qubit-desc">Zero-dependency network sniffer bypassing abstractions.</p>
+            <div class="qubit-tags">
+                <span class="q-tag">C</span>
+                <span class="q-tag">Raw Sockets</span>
+            </div>
+        </div>
+        <div class="qubit-action">
+            <svg viewBox="0 0 24 24" fill="none" class="action-icon">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
     </a>
-    <a href="/projects/" class="home-project-item">
-        <span class="home-project-name">Monolith Allocator</span>
-        <span class="home-project-tag">Systems / Linux</span>
+
+    <a href="/projects/" class="qubit-card">
+        <div class="qubit-state-indicator"></div>
+        <div class="qubit-content">
+            <h4 class="qubit-title">Monolith Allocator</h4>
+            <p class="qubit-desc">High-efficiency memory management fighting fragmentation.</p>
+            <div class="qubit-tags">
+                <span class="q-tag">Sys Architecture</span>
+            </div>
+        </div>
+        <div class="qubit-action">
+            <svg viewBox="0 0 24 24" fill="none" class="action-icon">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
     </a>
-    <a href="/projects/" class="home-project-item">
-        <span class="home-project-name">Unibo Motorsport</span>
-        <span class="home-project-tag">Race Car Safety</span>
+
+    <a href="/projects/" class="qubit-card">
+        <div class="qubit-state-indicator"></div>
+        <div class="qubit-content">
+            <h4 class="qubit-title">Unibo Motorsport</h4>
+            <p class="qubit-desc">CPU/GPU safety algorithms on autonomous racing cars.</p>
+            <div class="qubit-tags">
+                <span class="q-tag">Safety Critical</span>
+            </div>
+        </div>
+        <div class="qubit-action">
+            <svg viewBox="0 0 24 24" fill="none" class="action-icon">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+    </a>
+
+    <a href="/projects/" class="qubit-card all-projects">
+        <div class="qubit-content center-content">
+            <h4 class="qubit-title highlight-text">Compute Full State →</h4>
+            <p class="qubit-desc">Analyze all implementations.</p>
+        </div>
     </a>
 </div>
 
-<div class="section-header">
-    <h3>Writing</h3>
+<div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-text">Observables</div>
+    <div class="divider-line"></div>
 </div>
-<ul class="post-list">
+
+<div class="observable-list">
     {{ range (where .Site.RegularPages "Section" "blog") }}
-    <li class="post-item">
-        <a href="{{ .RelPermalink }}" class="post-link">
-            <div class="post-item-content">
-                <span class="post-title">{{ .Title }}</span>
-                <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+    <a href="{{ .RelPermalink }}" class="observable-item">
+        <div class="obs-timeline">
+            <div class="obs-node"></div>
+            <div class="obs-line"></div>
+        </div>
+        <div class="obs-info">
+            <div class="obs-meta">
+                <span class="obs-date">t={{ .Date.Format "2006.01.02" }}</span>
+                <span class="obs-id">ID-{{ substr .File.UniqueID 0 6 | upper }}</span>
             </div>
-        </a>
-    </li>
+            <h4 class="obs-title">{{ .Title }}</h4>
+        </div>
+        <div class="obs-expand">Read log</div>
+    </a>
     {{ end }}
-</ul>
+</div>
 {{ end }}
 {{ end }}
