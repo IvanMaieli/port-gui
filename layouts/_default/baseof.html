@@ -4,33 +4,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.bio }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}
-    </title>
+    <title>{{ if .IsHome }}Home{{ else }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
+    <!-- Classic, beautiful academic/engineering typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/style.css?v={{ now.Unix }}">
 </head>
 
 <body>
-    <header>
-        <h1><a href="/">{{ .Site.Title }}</a></h1>
-        <p>{{ .Site.Params.bio }}</p>
-        <nav>
-            <a href="/">Home</a> |
-            <a href="/projects/">Projects</a> |
-            <a href="https://{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a> |
-            <a href="https://{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-            <a href="mailto:{{ .Site.Params.email }}">Contact</a>
-        </nav>
-        <hr>
-    </header>
+    <div class="container">
+        <header id="site-header">
+            <h1 class="site-title"><a href="/">{{ .Site.Title }}</a></h1>
+            <p class="site-bio">{{ .Site.Params.bio }}</p>
 
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
+            <nav id="site-nav">
+                <a href="/">Index</a>
+                <span class="separator">/</span>
+                <a href="/projects/">Projects</a>
+                <span class="separator">/</span>
+                <a href="/blog/">Log</a>
+                <span class="separator">/</span>
+                <a href="https://{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+                <span class="separator">/</span>
+                <a href="https://{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+            </nav>
+        </header>
 
-    <footer>
-        <hr>
-        <p>&copy; {{ now.Year }} {{ .Site.Title }}.</p>
-    </footer>
+        <hr class="magic-line">
+
+        <main id="site-content">
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <hr class="magic-line">
+
+        <footer id="site-footer">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }}. <a
+                    href="mailto:{{ .Site.Params.email }}">ivan.maieli@gmail.com</a></p>
+            <p class="footer-note">Handcrafted plain HTML. Running without abstractions.</p>
+        </footer>
+    </div>
 </body>
 
 </html>

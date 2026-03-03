@@ -1,140 +1,403 @@
-/* Minimal, readable CSS for a classic professional look */
+/* ==========================================================================
+   The "Magical Old School HTML" Aesthetic
+   Pure semantic HTML, but styled with absolutely perfect typography,
+   color harmony, and subtle modern rendering magic.
+   ========================================================================== */
+
 :root {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --link-color: #0000ee;
-    --link-visited-color: #551a8b;
-    --border-color: #cccccc;
-    --code-bg: #f4f4f4;
+    /* "Old Paper" Light Theme */
+    --bg: #FDFDF8;
+    --text-main: #2C2C2A;
+    --text-muted: #7A7A76;
+    --accent: #D73A2A;
+    /* A classic vermilion ink */
+    --link-hover: #1A54A6;
+    /* A classic web blue */
+    --border: #E8E8E0;
+
+    --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #1a1a1a;
-        --text-color: #e0e0e0;
-        --link-color: #66b3ff;
-        --link-visited-color: #c080ff;
-        --border-color: #444444;
-        --code-bg: #2d2d2d;
+        /* "Amber Terminal / Vintage Night" Dark Theme */
+        --bg: #0D0E12;
+        --text-main: #D5D5D0;
+        --text-muted: #8B8B88;
+        --accent: #E3A85B;
+        /* Golden amber */
+        --link-hover: #75B5DD;
+        /* Soft cyan */
+        --border: #222328;
     }
 }
 
+* {
+    box-sizing: border-box;
+}
+
+/* 
+   The Magic is in the Rendering.
+   We use old-school tags but perfect modern font smoothing.
+*/
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    font-size: 19px;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+/* The true old-school constraint: a centered column */
+.container {
+    max-width: 680px;
+    margin: 5rem auto;
+    padding: 0 1.5rem;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-top: 0;
-}
+/* ==========================================================================
+   Typography & Links (The heart of the magic)
+   ========================================================================== */
 
 a {
-    color: var(--link-color);
-    text-decoration: underline;
-}
-
-a:visited {
-    color: var(--link-visited-color);
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(var(--border), var(--border));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s;
 }
 
 a:hover {
-    text-decoration: none;
+    color: var(--link-hover);
+    background-size: 100% 100%;
+    /* Magic: Instead of a block background, a subtle glow/tint via gradient */
+    background-image: linear-gradient(rgba(117, 181, 221, 0.1), rgba(117, 181, 221, 0.1));
+    border-radius: 2px;
 }
 
-header {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+
+#site-header {
     margin-bottom: 2rem;
 }
 
-header h1 {
-    margin-bottom: 0.2rem;
+.site-title {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
 }
 
-header h1 a {
-    color: inherit;
-    text-decoration: none;
+.site-title a {
+    background: none;
+    /* No underline for title */
 }
 
-header p {
-    margin-top: 0;
+.site-title a:hover {
+    color: var(--accent);
+    background: none;
+    text-shadow: 0 0 8px rgba(227, 168, 91, 0.3);
+    /* Subtle magic glow */
+}
+
+.site-bio {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0 0 1.5rem 0;
+}
+
+#site-nav {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+#site-nav a {
+    background: none;
+    border-bottom: 1px dashed var(--text-muted);
+    padding-bottom: 2px;
+}
+
+#site-nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    background: none;
+}
+
+.separator {
+    color: var(--text-muted);
+    margin: 0 0.5rem;
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   Structure Elements
+   ========================================================================== */
+
+.magic-line {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border) 10%, var(--border) 90%, transparent);
+    margin: 3rem 0;
+}
+
+/* ==========================================================================
+   Lists & Directories
+   ========================================================================== */
+
+.section-heading {
+    font-size: 1.25rem;
     font-style: italic;
-    color: inherit;
-    opacity: 0.8;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
 }
 
-nav {
+.directory-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.directory-list li {
+    margin-bottom: 0.75rem;
+}
+
+.directory-list a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    background: none;
+    padding: 0.25rem 0;
+    position: relative;
+}
+
+.directory-list a::after {
+    /* Magic connector line for old-school feel */
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, var(--text-muted) 10%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.directory-list a:hover {
+    color: var(--accent);
+    background: none;
+}
+
+.directory-list a:hover::after {
+    opacity: 0.4;
+}
+
+.item-date {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-right: 1.5rem;
+    background: var(--bg);
+    /* Hide the dots underneath */
+    padding-right: 0.5rem;
+}
+
+.item-name {
+    font-weight: 500;
+    background: var(--bg);
+    padding: 0 0.5rem 0 0;
+}
+
+.item-meta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-left: auto;
+    background: var(--bg);
+    padding-left: 0.5rem;
+}
+
+.view-all-link {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-style: italic;
     margin-top: 1rem;
-    font-weight: bold;
+    display: inline-block;
 }
 
-nav a {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-}
-nav a:first-child {
-    margin-left: 0;
+/* ==========================================================================
+   Single Document (Prose)
+   ========================================================================== */
+
+.document-header {
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid var(--border-color);
-    margin: 2rem 0;
-}
-
-ul, ol {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-}
-
-li {
+.document-title {
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
-time {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-    font-size: 0.9em;
-    color: inherit;
-    opacity: 0.7;
+.document-meta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
-code, pre {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-    background-color: var(--code-bg);
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
+.prose p {
+    text-align: justify;
+    /* Classic typography magic */
+    hyphens: auto;
 }
 
-pre {
-    padding: 1rem;
+/* Classic first letter drop-cap pseudo-magic for paragraphs directly after headings */
+.prose>p:first-of-type::first-letter {
+    font-size: 3.5rem;
+    float: left;
+    line-height: 0.8;
+    margin-right: 0.1em;
+    color: var(--accent);
+    font-style: normal;
+}
+
+.prose code {
+    font-family: var(--font-mono);
+    background: var(--border);
+    padding: 0.1em 0.3em;
+    font-size: 0.85em;
+    border-radius: 2px;
+}
+
+.prose pre {
+    background: var(--border);
+    padding: 1.5rem;
     overflow-x: auto;
+    border-radius: 4px;
+    font-size: 0.9em;
+    /* Soft inset shadow for that engraved terminal look */
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-pre code {
-    background-color: transparent;
-    padding: 0;
+.prose blockquote {
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    border-left: 2px solid var(--accent);
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.1em;
 }
 
-blockquote {
-    border-left: 4px solid var(--border-color);
-    margin: 0;
-    padding-left: 1rem;
-    color: inherit;
-    opacity: 0.8;
+.prose ul,
+.prose ol {
+    margin-left: 0;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.return-link {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+#site-footer {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 3rem;
+}
+
+#site-footer a {
+    background: none;
+    border-bottom: 1px dotted var(--text-muted);
+}
+
+#site-footer a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.footer-note {
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Project Cards inside Markdown
+   Converted from div blocks to simple unstyled semantic flow,
+   rendered delicately.
+   ========================================================================== */
+
+.prose .project-card {
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.prose .project-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.prose .project-desc {
+    color: var(--text-muted);
+}
+
+.prose .chips {
+    margin: 1rem 0;
+}
+
+.prose .chip {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.5rem;
+    display: inline-block;
+}
+
+.prose .chip.chip-outlined {
+    /* Identical in this classic theme */
+    background: transparent;
 }
