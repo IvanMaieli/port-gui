@@ -52,6 +52,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-y: scroll;
+    /* Force vertical scrollbar to prevent layout jump */
 }
 
 /* The true old-school constraint: a centered column */
@@ -257,7 +259,7 @@ h6 {
 
 .document-header {
     margin-bottom: 3rem;
-    text-align: center;
+    text-align: left;
 }
 
 .document-title {
