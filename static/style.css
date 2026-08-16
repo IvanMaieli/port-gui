@@ -132,7 +132,11 @@ h3 { font-size: var(--size-base); }
    Prose
    ========================================================================== */
 
-.prose p { margin-bottom: 1rem; }
+.prose p { 
+    margin-bottom: 1.5rem; 
+    text-align: justify;
+    hyphens: auto;
+}
 .prose pre {
     background: #e5e5e5;
     padding: 1rem;
