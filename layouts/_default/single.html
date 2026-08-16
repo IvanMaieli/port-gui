@@ -2,7 +2,7 @@
 <article class="document">
     <header class="document-header">
         <h1 class="document-title">{{ .Title }}</h1>
-        {{ if ne .Title "Projects" }}
+        {{ if and (ne .Title "Projects") (ne .Title "Bio") }}
         <div class="document-meta">
             <span>Posted: <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 2, 2006"
                     }}</time></span>
@@ -14,9 +14,13 @@
         {{ .Content }}
     </div>
 
-    {{ if ne .Title "Projects" }}
+    {{ if and (ne .Title "Projects") (ne .Title "Bio") }}
     <div class="document-footer">
-        <a href="/" class="return-link">&uarr; Return to Index</a>
+        {{ with .Params.categories }}
+        <a href="/categories/{{ index . 0 | urlize }}/" class="return-link">&uarr; Return to {{ index . 0 }}</a>
+        {{ else }}
+        <a href="/blog/" class="return-link">&uarr; Return to Log</a>
+        {{ end }}
     </div>
     {{ end }}
 </article>

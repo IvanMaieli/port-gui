@@ -2,6 +2,7 @@
 title: "Why Low-Level Matters"
 date: 2025-12-27
 draft: false
+categories: ["Embedded"]
 ---
 
 I am pretty sure that in the future nobody will know the meaning of the word _pointer_ [comp science field].

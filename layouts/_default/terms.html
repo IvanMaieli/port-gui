@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<h1 class="page-title">Categories</h1>
+
+<ul class="directory-list">
+    {{ range .Site.Taxonomies.categories }}
+    <li>
+        <a href="{{ .Page.RelPermalink }}">
+            <span class="item-name">{{ .Page.Title }}</span>
+            <span class="item-category">{{ .Count }} posts</span>
+        </a>
+    </li>
+    {{ end }}
+</ul>
+
+<div class="document-footer">
+    <a href="/" class="return-link">&uarr; Return to Index</a>
+</div>
+
+{{ end }}

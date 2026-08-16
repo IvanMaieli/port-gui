@@ -1,335 +1,143 @@
 /* ==========================================================================
-   The "Magical Old School HTML" Aesthetic
-   Pure semantic HTML, but styled with absolutely perfect typography,
-   color harmony, and subtle modern rendering magic.
+   Editorial, Custom Palette Theme
+   Palette: #fffcf2, #5a5a5a (muted), #403d39 (secondary), #252422 (primary), #eb5e28 (accent)
+   No borders. No lines. Single font. Consistent interaction.
    ========================================================================== */
 
 :root {
-    /* "Old Paper" Light Theme */
-    --bg: #FDFDF8;
-    --text-main: #2C2C2A;
-    --text-muted: #7A7A76;
-    --accent: #D73A2A;
-    /* A classic vermilion ink */
-    --link-hover: #1A54A6;
-    /* A classic web blue */
-    --border: #E8E8E0;
-
-    --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-    --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    --bg: #fffcf2;
+    --text-primary: #252422;
+    --text-secondary: #403d39;
+    --text-muted: #5a5a5a;
+    --accent: #eb5e28;
+    
+    --font-main: "Public Sans", sans-serif;
+    
+    /* Strict Font Sizes */
+    --size-base: 18px;
+    --size-sub: 22px;
+    --size-main: 28px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* "Amber Terminal / Vintage Night" Dark Theme */
-        --bg: #0D0E12;
-        --text-main: #D5D5D0;
-        --text-muted: #8B8B88;
-        --accent: #E3A85B;
-        /* Golden amber */
-        --link-hover: #75B5DD;
-        /* Soft cyan */
-        --border: #222328;
-    }
-}
+* { box-sizing: border-box; border: none !important; margin: 0; padding: 0; }
 
-* {
-    box-sizing: border-box;
-}
-
-/* 
-   The Magic is in the Rendering.
-   We use old-school tags but perfect modern font smoothing.
-*/
 body {
     background-color: var(--bg);
-    color: var(--text-main);
-    font-family: var(--font-serif);
-    font-size: 19px;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: var(--size-base);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    overflow-y: scroll;
-    /* Force vertical scrollbar to prevent layout jump */
 }
 
-/* The true old-school constraint: a centered column */
 .container {
-    max-width: 680px;
-    margin: 5rem auto;
-    padding: 0 1.5rem;
+    max-width: 650px;
+    margin: 4rem auto;
+    padding: 0 2rem;
 }
 
 /* ==========================================================================
-   Typography & Links (The heart of the magic)
+   Typography & Links
    ========================================================================== */
 
 a {
-    color: inherit;
+    color: var(--text-primary);
     text-decoration: none;
-    background-image: linear-gradient(var(--border), var(--border));
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
-    transition: background-size 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s;
+    transition: color 0.15s ease;
 }
 
-a:hover {
-    color: var(--link-hover);
-    background-size: 100% 100%;
-    /* Magic: Instead of a block background, a subtle glow/tint via gradient */
-    background-image: linear-gradient(rgba(117, 181, 221, 0.1), rgba(117, 181, 221, 0.1));
-    border-radius: 2px;
-}
+a:hover { color: var(--accent); }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 500;
+h1, h2, h3 {
+    font-weight: 700;
     line-height: 1.2;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
-    color: var(--text-main);
+    color: var(--text-primary);
 }
+
+h1 { font-size: var(--size-main); }
+h2 { font-size: var(--size-sub); }
+h3 { font-size: var(--size-base); }
 
 /* ==========================================================================
    Header & Navigation
    ========================================================================== */
 
-#site-header {
-    margin-bottom: 2rem;
-}
+#site-header { margin-bottom: 3rem; }
 
-.site-title {
-    font-size: 2.5rem;
-    margin: 0 0 0.5rem 0;
-    letter-spacing: -0.02em;
-}
-
-.site-title a {
-    background: none;
-    /* No underline for title */
-}
-
-.site-title a:hover {
-    color: var(--accent);
-    background: none;
-    text-shadow: 0 0 8px rgba(227, 168, 91, 0.3);
-    /* Subtle magic glow */
-}
+.site-title { font-size: var(--size-main); margin: 0; font-weight: 700; font-family: var(--font-main); }
+.site-title a { color: var(--text-primary); }
 
 .site-bio {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin: 0 0 1.5rem 0;
+    font-size: var(--size-base);
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
 }
 
 #site-nav {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-size: var(--size-base);
 }
 
 #site-nav a {
-    background: none;
-    border-bottom: 1px dashed var(--text-muted);
-    padding-bottom: 2px;
-}
-
-#site-nav a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-    background: none;
-}
-
-.separator {
-    color: var(--text-muted);
-    margin: 0 0.5rem;
-    opacity: 0.5;
+    color: var(--text-secondary);
+    margin-right: 1rem;
 }
 
 /* ==========================================================================
-   Structure Elements
-   ========================================================================== */
-
-.magic-line {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border) 10%, var(--border) 90%, transparent);
-    margin: 3rem 0;
-}
-
-/* ==========================================================================
-   Lists & Directories
+   Lists & Taxonomy
    ========================================================================== */
 
 .section-heading {
-    font-size: 1.25rem;
-    font-style: italic;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    font-size: var(--size-base);
+    color: var(--text-secondary);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .directory-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .directory-list li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .directory-list a {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: baseline;
-    background: none;
-    padding: 0.25rem 0;
-    position: relative;
-}
-
-.directory-list a::after {
-    /* Magic connector line for old-school feel */
-    content: '';
-    position: absolute;
-    bottom: 6px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, var(--text-muted) 10%, rgba(255, 255, 255, 0) 0%);
-    background-position: bottom;
-    background-size: 8px 1px;
-    background-repeat: repeat-x;
-    opacity: 0.15;
-    z-index: -1;
-}
-
-.directory-list a:hover {
-    color: var(--accent);
-    background: none;
-}
-
-.directory-list a:hover::after {
-    opacity: 0.4;
 }
 
 .item-date {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: var(--size-base);
     color: var(--text-muted);
-    margin-right: 1.5rem;
-    background: var(--bg);
-    /* Hide the dots underneath */
-    padding-right: 0.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
 }
 
 .item-name {
+    font-size: var(--size-base);
     font-weight: 500;
-    background: var(--bg);
-    padding: 0 0.5rem 0 0;
+    flex-grow: 1;
 }
 
-.item-meta {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
+.item-category {
+    font-size: var(--size-base);
     color: var(--text-muted);
-    margin-left: auto;
-    background: var(--bg);
-    padding-left: 0.5rem;
-}
-
-.view-all-link {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-top: 1rem;
-    display: inline-block;
+    margin-left: 1rem;
 }
 
 /* ==========================================================================
-   Single Document (Prose)
+   Prose
    ========================================================================== */
 
-.document-header {
-    margin-bottom: 3rem;
-    text-align: left;
-}
-
-.document-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.document-meta {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.prose p {
-    text-align: justify;
-    /* Classic typography magic */
-    hyphens: auto;
-}
-
-/* Classic first letter drop-cap pseudo-magic for paragraphs directly after headings */
-.prose>p:first-of-type::first-letter {
-    font-size: 3.5rem;
-    float: left;
-    line-height: 0.8;
-    margin-right: 0.1em;
-    color: var(--accent);
-    font-style: normal;
-}
-
-.prose code {
-    font-family: var(--font-mono);
-    background: var(--border);
-    padding: 0.1em 0.3em;
-    font-size: 0.85em;
-    border-radius: 2px;
-}
-
+.prose p { margin-bottom: 1rem; }
 .prose pre {
-    background: var(--border);
-    padding: 1.5rem;
+    background: #e5e5e5;
+    padding: 1rem;
+    font-size: var(--size-base);
     overflow-x: auto;
-    border-radius: 4px;
-    font-size: 0.9em;
-    /* Soft inset shadow for that engraved terminal look */
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.prose blockquote {
-    margin: 2rem 0;
-    padding: 1rem 2rem;
-    border-left: 2px solid var(--accent);
-    color: var(--text-muted);
-    font-style: italic;
-    font-size: 1.1em;
-}
-
-.prose ul,
-.prose ol {
-    margin-left: 0;
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.prose li {
-    margin-bottom: 0.5rem;
-}
-
-.return-link {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
 }
 
 /* ==========================================================================
@@ -337,69 +145,15 @@ h6 {
    ========================================================================== */
 
 #site-footer {
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 3rem;
-}
-
-#site-footer a {
-    background: none;
-    border-bottom: 1px dotted var(--text-muted);
-}
-
-#site-footer a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-}
-
-.footer-note {
-    opacity: 0.6;
-    margin-top: 0.5rem;
-    font-style: italic;
-}
-
-/* ==========================================================================
-   Project Cards inside Markdown
-   Converted from div blocks to simple unstyled semantic flow,
-   rendered delicately.
-   ========================================================================== */
-
-.prose .project-card {
-    margin-bottom: 3.5rem;
-    position: relative;
-}
-
-.prose .project-name {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.prose .project-desc {
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+    font-size: var(--size-base);
     color: var(--text-muted);
 }
 
-.prose .chips {
-    margin: 1rem 0;
-}
-
-.prose .chip {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    margin-right: 0.5rem;
+.return-link {
     display: inline-block;
-}
-
-.prose .chip.chip-outlined {
-    /* Identical in this classic theme */
-    background: transparent;
+    margin-top: 2rem;
+    font-size: var(--size-base);
+    color: var(--accent);
 }

@@ -1,20 +1,23 @@
 {{ define "main" }}
 
-<h1 class="page-title">{{ .Title }}</h1>
+<h1 class="page-title">Category: {{ .Title }}</h1>
 
 <ul class="directory-list">
-    {{ range .RegularPages }}
+    {{ range .Pages }}
     <li>
         <a href="{{ .RelPermalink }}">
             <span class="item-date">{{ .Date.Format "2006-01-02" }}</span>
             <span class="item-name">{{ .Title }}</span>
+            {{ with .Params.categories }}
+            <span class="item-category">{{ index . 0 }}</span>
+            {{ end }}
         </a>
     </li>
     {{ end }}
 </ul>
 
 <div class="document-footer">
-    <a href="/blog/" class="return-link">&uarr; Return to Log</a>
+    <a href="/blog/" class="return-link">&uarr; Return to Categories</a>
 </div>
 
 {{ end }}
